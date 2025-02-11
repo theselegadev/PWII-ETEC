@@ -7,6 +7,8 @@
     <title>Olá Mundo</title>
 </head>
 <body>
+    <a href="index.php">Home</a>
+    <a href="contato.php">Página de contato</a>
     <?php
         echo "Hello world";
     ?>
