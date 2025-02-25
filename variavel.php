@@ -36,6 +36,35 @@
 
             echo "<h1>$salario</h1>";
         ?>
+
+        <h1>Constantes</h1>
+        <p>
+            Em PHP, constantes são valores fixos que não podem ser alterados durante a execução do programa. Elas são declaradas com a palavra-chave define() ou usando a palavra-chave const (para constantes definidas em classes ou escopos específicos).
+            A principal diferença entre constantes e variáveis é que, enquanto as variáveis podem ter seu valor alterado, as constantes mantêm o mesmo valor durante todo o script. Constantes podem ser usadas em qualquer lugar do código e não precisam do símbolo de cifrão ($).
+        </p>
+
+        <h3>Exemplo de declaração de constantes</h3>
+
+        <pre>
+ 
+            define("PI", 3.14);  // Usando define()
+            echo PI;  // Imprime 3.14
+
+            const URL = "https://www.exemplo.com";  // Usando const
+            echo URL;  // Imprime https://www.exemplo.com
+
+        </pre>
+
+        <?php
+            define("PI",3.14);
+
+            echo "<br>".PI;
+
+            const coordenador = "Faberson";
+
+            echo "<br>".coordenador;
+        
+        ?>
     </div>
 
     <script src="bootstrap.bundle.min.js" ></script>
