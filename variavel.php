@@ -65,6 +65,31 @@
             echo "<br>".coordenador;
         
         ?>
+
+        <h2>Resposta exercicios da aula:</h2>
+        <?php
+            // Exercicio 1
+            $num1 = 10;
+            $num2 = 10;
+            $res = $num1 + $num2;
+
+            echo "$num1 + $num2 = $res<br>";
+
+            // Exercicio 2
+            $num1 = 10;
+            $num2 = 10;
+            $res = $num1 * $num2;
+
+            echo "$num1 * $num2 = $res<br>";
+
+            // Exercicio 3
+            $desc = "Celular iphone 14";
+            $valor = 10;
+            $quant = 10;
+
+            echo "$desc <br>quantidade: $quant <br>Valor: $valor";
+
+        ?>
     </div>
 
     <script src="bootstrap.bundle.min.js" ></script>
