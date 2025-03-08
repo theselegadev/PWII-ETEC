@@ -21,6 +21,7 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="while.php">While</a></li>
               <li><a class="dropdown-item" href="switch.php">Switch</a></li>
+              <li><a class="dropdown-item" href="for.php">For</a></li>
               <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
             </ul>
           </li>
