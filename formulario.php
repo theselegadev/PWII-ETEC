@@ -20,14 +20,53 @@
         <input type="password" name="senha"><br>
         <input type="submit">
     </form>
+    <br>
     <?php
-        $nome = $_POST['nome'];
-        $idade = $_POST['idade'];
-        $senha = $_POST['senha'];
+        if(isset($_POST['nome'])){
+            $nome = $_POST['nome'];
+            $idade = $_POST['idade'];
+            $senha = $_POST['senha'];
 
-        echo "<h1>Seu nome é $nome e você tem $idade, sua senha: é $senha</h1>";
+            echo "<h1>Seu nome é $nome e você tem $idade, sua senha: é $senha</h1>";
+        }
         
     ?>
+    <form action="./pegardados.php" method="get">
+        <label>Número 1:</label>
+        <input type="number" name="n1"><br>
+        <label>Número 2:</label>
+        <input type="number" name="n2"><br>
+        <input type="submit">
+    </form>
+    <br>
+    <form action="./pegardados.php" method="get">
+        <label>Nome:</label>
+        <input type="text" name="nome">
+        <input type="submit">
+    </form>
+    <br>
+    <form action="./pegardados.php" method="post">
+        <label>Login:</label>
+        <input type="text" name="login"><br>
+        <label>Senha:</label>
+        <input type="password" name="senha"><br>
+        <input type="submit">
+    </form>
+    <br>
+    <form action="./pegardados.php" method="post">
+        <label>Número 1:</label>
+        <input type="number" name="num1"><br>
+        <label>Número 2:</label>
+        <input type="number" name="num2"><br>
+        <input type="submit">
+    </form>
+    <br>
+    <form action="./pegardados.php" method="post">
+        <label>Mesagem:</label>
+        <input type="text" name="msg"><br>
+        <input type="submit">
+    </form>
+    <br>
     <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
