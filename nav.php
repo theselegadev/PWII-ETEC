@@ -24,6 +24,7 @@
               <li><a class="dropdown-item" href="for.php">For</a></li>
               <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
               <li><a class="dropdown-item" href="formulario.php">Formulário</a></li>
+              <li><a class="dropdown-item" href="login.php">Login</a></li>
             </ul>
           </li>
         </ul>
