@@ -1,5 +1,6 @@
 <?php
     include "./nav.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,6 +12,19 @@
     <link href="bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="overflow-x:hidden">
+    <div class="container">
+        <?php
+            if(isset($_GET['sucesso'])){
+                ?>
+                    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                        <?php echo $_GET['sucesso']?>
+                        <a href="./index.php"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></a>
+                    </div>
+                <?php
+            }
+        ?>
+        <a href="./instalar.php?criar=criou o banco" class="btn btn-success mt-4">Gerar banco</a>
+    </div>
     <script src="bootstrap.bundle.min.js" ></script>
 </body>
 </html>
