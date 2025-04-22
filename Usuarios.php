@@ -17,14 +17,64 @@
     $repo = new UsuarioRepository($conexao);
 
     $usuarios = $repo->buscarTodos();
-
-    foreach ($usuarios as $item ) {
-        echo "<h1>Login: " .$item['login'].
-            "   Senha: " .$item['senha'].
-            "   Ativo: " . $item['ativo'],
-            "</h1><br>";
-        
-    }
+    ?>
+    <div class="container">
+        <div class="row">
+            <div class="offset-3 col-6 offset-3">
+                <ul class="list-group mt-4">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-4">
+                                <button class="btn btn-success">Novo Usuário</button>
+                            </div>
+                            <div class="col-8">
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-2 col-8 ">
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <th>Id</th>
+                        <th>Login</th>
+                        <th>Ativo</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach ($usuarios as $item) {
+                                ?>
+                                    <td><?php echo $item['ID']?></td>
+                                    <td><?php echo $item['LOGIN']?></td>
+                                    <td>
+                                        <?php 
+                                            if($item['ATIVO'] == 1){
+                                                echo "Ativo";
+                                            }else{
+                                                echo "Desativo";
+                                            }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary">Editar</button>
+                                        <button class="btn btn-danger">Deletar</button>
+                                    </td>
+                                <?php  
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <?php
 ?>
 <script src="./bootstrap.bundle.min.js"></script>
 </body>

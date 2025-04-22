@@ -1,32 +1,40 @@
 <?php
-    include "conexao.php";
+
+include "conexao.php";
+
+$sql = "CREATE TABLE IF NOT EXISTS USUARIOS (
+            ID INT PRIMARY KEY AUTO_INCREMENT,
+            LOGIN VARCHAR(50) NOT NULL,
+            SENHA VARCHAR(80) NOT NULL,
+            ATIVO BIT DEFAULT 1
+        )";
 
 
-    $query = "
-    drop table if exists usuario;
-    create table usuarios(
-        id int primary key auto_increment,
-        login varchar(50) not null,
-        senha varchar(80) not null,
-        ativo bit default 1
-    );";
+if ($conexao->query($sql)) {
+    echo "Tabela criada com sucesso.<br>";
+} else {
+    echo "Erro ao criar a tabela: " . $conexao->error . "<br>";
+}
 
-    if($conexao->query($query)){
-        
-    }else{
-        echo "Não funcionou!";
-    }
 
-    $query = "insert into usuarios (login,senha) values('admin','123')";
+//////////////////////////// BLOCO PARA INSERIR USUARIO////////////////////////////
+// Inserindo uma linha na tabela
+$sql_insert = "INSERT INTO USUARIOS (LOGIN, SENHA) VALUES ('ADMIN','123');";
 
-    if($conexao->query($query)){
 
-    }else{
-        echo "não funcionou";
-    }
+// Executando a inserção
+if ($conexao->query($sql_insert)) {
+    header("Location: index.php?sucesso=Banco criado com sucesso");
+} else {
+    echo "Erro ao inserir dados: " . $conexao->error . "<br>";
+}
+///////////////////////////FIM DO BLOCO PARA INSERIR USUARIO///////////////////////
 
-    if(isset($_GET['criar'])){
-        $conexao->close();
-        header("Location: index.php?sucesso=Banco criado com sucesso");
-    }
+// Fechando a conexão
+$conexao->close();
+
+
+
+
+
 ?>
