@@ -40,32 +40,36 @@
         </div>
         <div class="row">
             <div class="offset-2 col-8 ">
-                <table class="table table-striped mt-5">
+                <table class="table table-striped table-hover mt-5">
                     <thead>
-                        <th>Id</th>
-                        <th>Login</th>
-                        <th>Ativo</th>
-                        <th></th>
+                        <tr>
+                            <th>Id</th>
+                            <th>Login</th>
+                            <th>Ativo</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
                         <?php
                             foreach ($usuarios as $item) {
                                 ?>
-                                    <td><?php echo $item['ID']?></td>
-                                    <td><?php echo $item['LOGIN']?></td>
-                                    <td>
-                                        <?php 
-                                            if($item['ATIVO'] == 1){
-                                                echo "Ativo";
-                                            }else{
-                                                echo "Desativo";
-                                            }
-                                        ?>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-primary">Editar</button>
-                                        <button class="btn btn-danger">Deletar</button>
-                                    </td>
+                                    <tr>
+                                        <td><?php echo $item['ID']?></td>
+                                        <td><?php echo $item['LOGIN']?></td>
+                                        <td>
+                                            <?php 
+                                                if($item['ATIVO'] == 1){
+                                                    echo "Ativo";
+                                                }else{
+                                                    echo "Desativo";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary">Editar</button>
+                                            <button class="btn btn-danger">Deletar</button>
+                                        </td>
+                                    </tr>
                                 <?php  
                             }
                         ?>
