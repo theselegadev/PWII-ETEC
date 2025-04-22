@@ -11,11 +11,19 @@
         ativo bit default 1
     );";
 
-    $conexao->query($query);
+    if($conexao->query($query)){
+        
+    }else{
+        echo "Não funcionou!";
+    }
 
     $query = "insert into usuarios (login,senha) values('admin','123')";
 
-    $conexao->query($query);
+    if($conexao->query($query)){
+
+    }else{
+        echo "não funcionou";
+    }
 
     if(isset($_GET['criar'])){
         $conexao->close();
