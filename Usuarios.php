@@ -25,7 +25,7 @@
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-4">
-                                <button class="btn btn-success">Novo Usuário</button>
+                                <a href="novo_usuario.php" class="btn btn-success">Novo Usuário</a>
                             </div>
                             <div class="col-8">
                                 <form class="d-flex" role="search">

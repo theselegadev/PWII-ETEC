@@ -15,6 +15,7 @@ class UsuarioRepository {
         while($row = $result->fetch_assoc()) {
             array_push($usuarios, $row);
         }
+        
         return $usuarios;
     }
 
