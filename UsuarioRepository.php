@@ -28,6 +28,14 @@ class UsuarioRepository {
         return $resultado->fetch_assoc();
     }
 
+    
+    public function Inserir($login,$senha,$ativo){
+        $sql = "INSERT INTO USUARIOS (LOGIN, SENHA, ATIVO) VALUES (?,?,?)";
+
+        $res = $this->conexao->prepare($sql);
+        $res->bind_param("ssi",$login,$senha,$ativo);
+        $res->execute();
+    }
 }
 
 ?>

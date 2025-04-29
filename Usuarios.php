@@ -19,6 +19,16 @@
     $usuarios = $repo->buscarTodos();
     ?>
     <div class="container">
+        <?php
+            if(isset($_GET['inserido'])){
+                ?>
+                    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                        <?php echo $_GET['inserido']?>
+                        <a href="./Usuarios.php"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></a>
+                    </div>
+                <?php
+            }
+        ?>
         <div class="row">
             <div class="offset-3 col-6 offset-3">
                 <ul class="list-group mt-4">

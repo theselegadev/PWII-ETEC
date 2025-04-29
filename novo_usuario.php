@@ -34,7 +34,7 @@
                     <div class="mb-3">
                         <label>Usuário ativo?</label>
                         <br>
-                        <input type="checkbox" name="ativo" value="Usuário ativo">
+                        <input type="checkbox" name="ativo" value="1">
                     </div>
                     <button class="btn btn-success">Cadastrar</button>
                 </form>
