@@ -19,7 +19,21 @@ if ($conexao->query($sql)) {
 
 //////////////////////////// BLOCO PARA INSERIR USUARIO////////////////////////////
 // Inserindo uma linha na tabela
-$sql_insert = "INSERT INTO USUARIOS (LOGIN, SENHA) VALUES ('ADMIN','123');";
+$sql_insert = "INSERT INTO USUARIOS (LOGIN, SENHA) VALUES 
+('ADMIN','123'),
+('FELIPE MATHEUS YOSHIDA LAZARI', '123senha'),		
+('LEONEL FRANCISCO DAMIAO', '123senha'),
+('LUCAS MATHEUS DE SOUZA DOS SANTOS', '123senha'),
+('LUÍS FELIPE GAZIRO GOMES', '123senha'),
+('MARLI EVANGELISTA', '123senha'),
+('MATHEUS DA CRUZ SAITU HIGA', '123senha'),
+('MATHEUS LUNA CAMARGO', '123senha'),
+('MATHEUS SELEGHIN ALEXANDRE', '123senha'),
+('MURILLO DE PAULA PEREIRA', '123senha'),
+('RYAN ROBIN VELOSO DE MATOS', '123senha'),
+('VITORIA FERNANDA FERRARI DA SILVA', '123senha'),
+('YURI RAFAEL DA SILVA SANTO', '123senha')
+;";
 
 
 // Executando a inserção

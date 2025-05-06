@@ -36,6 +36,14 @@ class UsuarioRepository {
         $res->bind_param("ssi",$login,$senha,$ativo);
         $res->execute();
     }
+    
+    public function deletar($id){
+        $sql = "DELETE FROM USUARIOS WHERE ID = ?";
+
+        $res = $this->conexao->prepare($sql);
+        $res->bind_param("i",$id);
+        $res->execute();
+    }
 }
 
 ?>
