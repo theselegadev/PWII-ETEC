@@ -21,7 +21,7 @@
 
         if(isset($_POST['nome'])){
             $repo->editar($_POST['nome'],$_POST['ativo'],$_POST['id']);
-            header("Location: Usuarios.php?editar:Editado com sucesso");
+            header("Location: Usuarios.php?editar=Editado com sucesso");
         }
     ?>
     <div class="container">
