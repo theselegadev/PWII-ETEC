@@ -9,7 +9,12 @@
         }
 
         public function Ler(){
+            $sql = "SELECT * FROM referencia";
+            $res = Conexao::getConexao()->query($sql);
 
+            $referencias = $res->rowCount()>0 ? $res->fetchAll(\PDO::FETCH_ASSOC) : [];
+
+            return $referencias;
         }
         
         public function Editar(Referencia $r){

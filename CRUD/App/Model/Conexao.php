@@ -4,7 +4,7 @@
     class Conexao{
         private static $conexao;
 
-        public function getConexao(){
+        public static function getConexao(){
             if(!isset(self::$conexao)){
                 try{
                     self::$conexao = new \PDO("mysl:host=localhost;dbname=test;charset=utf8mb4","root","");

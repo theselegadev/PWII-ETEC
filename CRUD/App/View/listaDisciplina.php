@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../../vendor/autoload.php'?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -48,7 +49,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Pegar dados do  disciplinaDao via controller-->
+                        <?php
+                            $controllerDisc = new \CRUD\Controller\ControllerDisciplina();
+
+                            foreach($controllerDisc->getDisciplinas() as $item){
+                                echo "<tr>";
+                                    echo "<td>$item[ID]</td>";
+                                    echo "<td>$item[NOME]</td>";
+                                    echo "<td>
+                                        <button class='btn btn-primary'>Editar</button>
+                                        <button class='btn btn-danger'>Deletar</button>
+                                    </td>";
+                                echo "</tr>";
+                            }
+                        
+                        ?>
                     </tbody>
                 </table>
             </div>
