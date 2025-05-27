@@ -1,5 +1,5 @@
 <?php
-    namespace CRUD\App;
+    namespace App\Model;
 
     class Referencia{
         private $id;

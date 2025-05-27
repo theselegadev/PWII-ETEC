@@ -50,7 +50,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            $controllerRef = new \CRUD\Controller\ControllerReferencia();
+                            $controllerRef = new \App\Controller\ControllerReferencia();
 
                             foreach($controllerRef->getReferencias() as $item){
                                 echo "<tr>";

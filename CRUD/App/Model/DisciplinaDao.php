@@ -1,16 +1,20 @@
 <?php
 
-    namespace CRUD\App;
-    
-    use CRUD\App\Disciplina;
+    namespace App\Model;
 
     class DisciplinaDao{
         public function Inserir(Disciplina $d){
+            $sql = "INSERT INTO disciplinas VALUES (?,?)";
+            $res = Conexao::getConexao()->prepare($sql);
 
+            $res->bindValue(1,$d->getId());
+            $res->bindValue(2,$d->getNome());
+
+            $res->execute();
         }
 
         public function Ler(){
-            $sql = "SELECT * FROM disciplina";
+            $sql = "SELECT * FROM disciplinas";
             $res = Conexao::getConexao()->query($sql);
 
             $disciplinas = $res->rowCount()>0 ? $res->fetchAll(\PDO::FETCH_ASSOC) : [];

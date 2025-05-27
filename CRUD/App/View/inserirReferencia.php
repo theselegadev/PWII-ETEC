@@ -21,14 +21,14 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="">
+                        <form action="../index.php" method="post">
                             <div class="input-group mb-3 mt-3">
                                 <span class="input-group-text" id="basic-addon1">ID</span>
-                                <input type="text" class="form-control" placeholder="ID" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" placeholder="ID" aria-label="Username" aria-describedby="basic-addon1" name="id_referencia">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Nome</span>
-                                <input type="text" class="form-control" placeholder="Nome" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Nome" aria-label="Username" aria-describedby="basic-addon1" name="nome_referencia">
                             </div>
                             <div class="row">
                                 <button class="btn btn-success mt-1">Inserir</button>

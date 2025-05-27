@@ -1,5 +1,5 @@
 <?php
-    namespace CRUD\Controller;  
+    namespace App\Controller;  
 
     class ControllerReferencia{
         private $referenciaDao;
@@ -7,8 +7,8 @@
 
         public function __construct()
         {
-            $this->referenciaDao = new \CRUD\App\ReferenciaDao();
-            $this->referencia = new \CRUD\App\Referencia();
+            $this->referenciaDao = new \App\Model\ReferenciaDao();
+            $this->referencia = new \App\Model\Referencia();
         }
 
         public function getReferencias(){

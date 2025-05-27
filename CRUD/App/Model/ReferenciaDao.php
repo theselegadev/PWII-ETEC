@@ -1,7 +1,7 @@
 <?php
-    namespace CRUD\App; 
+    namespace App\Model; 
 
-    use CRUD\App\Referencia;
+    use App\Model\Referencia;
 
     class ReferenciaDao{
         public function Inserir(Referencia $r){
@@ -9,7 +9,7 @@
         }
 
         public function Ler(){
-            $sql = "SELECT * FROM referencia";
+            $sql = "SELECT * FROM referencias";
             $res = Conexao::getConexao()->query($sql);
 
             $referencias = $res->rowCount()>0 ? $res->fetchAll(\PDO::FETCH_ASSOC) : [];

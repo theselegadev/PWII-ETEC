@@ -50,12 +50,12 @@
                     </thead>
                     <tbody>
                         <?php
-                            $controllerDisc = new \CRUD\Controller\ControllerDisciplina();
+                            $controllerDisc = new \App\Controller\ControllerDisciplina();
 
                             foreach($controllerDisc->getDisciplinas() as $item){
                                 echo "<tr>";
                                     echo "<td>$item[ID]</td>";
-                                    echo "<td>$item[NOME]</td>";
+                                    echo "<td>$item[DISCIPLINA]</td>";
                                     echo "<td>
                                         <button class='btn btn-primary'>Editar</button>
                                         <button class='btn btn-danger'>Deletar</button>

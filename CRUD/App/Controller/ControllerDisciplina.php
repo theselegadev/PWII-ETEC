@@ -1,5 +1,5 @@
 <?php
-    namespace CRUD\Controller;
+    namespace App\Controller;
 
     class ControllerDisciplina{
         private $disciplinaDao;
@@ -7,11 +7,17 @@
 
         public function __construct()
         {
-            $this->disciplinaDao = new \CRUD\App\DisciplinaDao();
-            $this->disciplina = new \CRUD\App\Disciplina();
+            $this->disciplinaDao = new \App\Model\DisciplinaDao();
+            $this->disciplina = new \App\Model\Disciplina();
         }
 
         public function getDisciplinas(){
             return $this->disciplinaDao->Ler();
+        }
+
+        public function inserir($id,$nome){
+            $this->disciplina->setId($id);
+            $this->disciplina->setNome($nome);
+            $this->disciplinaDao->Inserir($this->disciplina);
         }
     }
