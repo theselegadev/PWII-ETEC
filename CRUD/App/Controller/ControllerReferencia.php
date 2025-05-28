@@ -24,4 +24,10 @@
             $this->referencia->setNome($nome);
             $this->referenciaDao->Inserir($this->referencia);
         }
+
+        public function Editar($id,$nome){
+            $this->referencia->setId($id);
+            $this->referencia->setNome($nome);
+            $this->referenciaDao->Editar($this->referencia);
+        }
     }

@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="">
+                        <form action="../index.php" method="post">
                             <div class="input-group mb-3 mt-3">
                                 <span class="input-group-text" id="basic-addon1">ID</span>
                                 <input type="text" class="form-control" placeholder="ID" aria-label="Username" aria-describedby="basic-addon1" readonly value="<?php echo $referencia['ID']?>" name="id_referencia_editar" required>

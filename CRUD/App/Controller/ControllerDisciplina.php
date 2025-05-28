@@ -27,7 +27,7 @@
 
         public function Editar($id,$nome){
             $this->disciplina->setId($id);
-            $this->disciplina->setId($nome);
+            $this->disciplina->setNome($nome);
             $this->disciplinaDao->Editar($this->disciplina);
         }
     }
