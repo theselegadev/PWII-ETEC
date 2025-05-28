@@ -37,6 +37,12 @@
         }
 
         public function BuscarPorId($id){
+            $sql = "SELECT * FROM disciplinas WHERE id = $id";
 
+            $res = Conexao::getConexao()->query($sql);
+            
+            $disciplina = $res->rowCount()>0 ? $res->fetchAll() : [];
+
+            return $disciplina;
         }
     }

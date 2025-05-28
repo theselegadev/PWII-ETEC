@@ -34,10 +34,16 @@
         }
 
         public function Deletar($id){
-
+            
         }
 
         public function BuscarPorId($id){
+            $sql = "SELECT * FROM referencias WHERE id = $id";
+
+            $res = Conexao::getConexao()->query($sql);
             
+            $referencia = $res->rowCount()>0 ? $res->fetchAll() : [];
+
+            return $referencia;
         }
     }
