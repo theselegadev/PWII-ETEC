@@ -41,7 +41,7 @@
 
             $res = Conexao::getConexao()->query($sql);
             
-            $disciplina = $res->rowCount()>0 ? $res->fetchAll() : [];
+            $disciplina = $res->rowCount()>0 ? $res->fetch() : [];
 
             return $disciplina;
         }

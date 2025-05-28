@@ -15,6 +15,10 @@
             return $this->referenciaDao->Ler();
         }
 
+        public function buscarPorId($id){
+            return $this->referenciaDao->buscarPorId($id);
+        }
+
         public function Inserir($id,$nome){
             $this->referencia->setId($id);
             $this->referencia->setNome($nome);

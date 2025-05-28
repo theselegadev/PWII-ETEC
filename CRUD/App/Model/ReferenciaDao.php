@@ -42,7 +42,7 @@
 
             $res = Conexao::getConexao()->query($sql);
             
-            $referencia = $res->rowCount()>0 ? $res->fetchAll() : [];
+            $referencia = $res->rowCount()>0 ? $res->fetch() : [];
 
             return $referencia;
         }

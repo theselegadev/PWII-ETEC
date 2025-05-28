@@ -20,4 +20,14 @@
             $this->disciplina->setNome($nome);
             $this->disciplinaDao->Inserir($this->disciplina);
         }
+
+        public function buscarPorId($id){
+            return $this->disciplinaDao->buscarPorId($id);
+        }
+
+        public function Editar($id,$nome){
+            $this->disciplina->setId($id);
+            $this->disciplina->setId($nome);
+            $this->disciplinaDao->Editar($this->disciplina);
+        }
     }
