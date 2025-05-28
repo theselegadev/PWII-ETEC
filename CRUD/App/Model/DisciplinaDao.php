@@ -47,4 +47,19 @@
 
             return $disciplina;
         }
+
+        public function pesquisar($string){
+            $string = '%'.$string.'%';
+
+            $sql = "SELECT * FROM disciplinas WHERE disciplina LIKE ?";
+            $res = Conexao::getConexao()->prepare($sql);
+
+            $res->bindValue(1,$string);
+            
+            $res->execute();
+
+            $resultado = $res->rowCount()>0 ? $res->fetchAll(\PDO::FETCH_ASSOC) : [];
+
+            return $resultado;
+        }
     }

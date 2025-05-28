@@ -34,4 +34,8 @@
         public function deletar($id){
             $this->disciplinaDao->deletar($id);
         }
+
+        public function pesquisar($string){
+            $this->disciplinaDao->pesquisar($string);
+        }
     }

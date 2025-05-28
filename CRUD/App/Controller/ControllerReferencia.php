@@ -34,4 +34,8 @@
         public function deletar($id){
             $this->referenciaDao->deletar($id);
         }
+
+        public function pesquisar($string){
+            $this->referenciaDao->pesquisar($string);
+        }
     }

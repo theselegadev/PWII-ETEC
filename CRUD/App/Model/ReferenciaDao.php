@@ -48,4 +48,17 @@
 
             return $referencia;
         }
+
+        public function pesquisar($string){
+            $sql = "SELECT * FROM referencia WHERE nome LIKE ?";
+            $res = Conexao::getConexao()->prepare($sql);
+
+            $res->bindParam("s",$string);
+            
+            $res->execute();
+
+            $resultado = $res->rowCount()>0 ? $res->fetchAll(\PDO::FETCH_ASSOC) : [];
+
+            return $resultado;
+        }
     }

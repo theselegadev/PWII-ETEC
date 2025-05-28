@@ -19,7 +19,7 @@
                                 <a href="./inserirDisciplina.php" class="btn btn-success">Nova Disciplina</a>
                             </div>
                             <div class="col-6">
-                                <form action="">
+                                <form action="<?php $_SERVER['PHP_SELF']?>" method="get">
                                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"/>
                             </div>
                             <div class="col-3">
