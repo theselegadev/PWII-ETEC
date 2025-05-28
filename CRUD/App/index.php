@@ -24,3 +24,13 @@
         header("Location: ./View/listaReferencia.php");
         exit;
     }
+    if(isset($_GET['id_disciplina_delete']) && !empty($_GET['id_disciplina_delete'])){
+        $controllerDisc->deletar($_GET['id_disciplina_delete']);
+        header("Location: ./View/listaDisciplina.php");
+        exit;
+    }
+    if(isset($_GET['id_referencia_delete']) && !empty($_GET['id_referencia_delete'])){
+        $controllerRef->deletar($_GET['id_referencia_delete']);
+        header("Location: ./View/listaReferencia.php");
+        exit;
+    }

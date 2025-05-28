@@ -33,7 +33,9 @@
         }
 
         public function Deletar($id){
+            $sql = "DELETE FROM disciplinas WHERE id = $id";
 
+            Conexao::getConexao()->query($sql);
         }
 
         public function BuscarPorId($id){

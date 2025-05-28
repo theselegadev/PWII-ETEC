@@ -58,7 +58,7 @@
                                     echo "<td>$item[NOME]</td>";
                                     echo "<td>
                                         <a href='./editarReferencia.php?id_referencia=$item[ID]' class='btn btn-primary'>Editar</a>
-                                        <button class='btn btn-danger'>Deletar</button>
+                                        <a href='../index.php?id_referencia_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
                                     </td>";
                                 echo "</tr>";
                             }

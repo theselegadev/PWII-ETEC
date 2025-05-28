@@ -34,7 +34,9 @@
         }
 
         public function Deletar($id){
-            
+            $sql = "DELETE FROM referencias WHERE id = $id";
+
+            Conexao::getConexao()->query($sql);
         }
 
         public function BuscarPorId($id){

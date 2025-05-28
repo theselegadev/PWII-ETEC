@@ -30,4 +30,8 @@
             $this->disciplina->setNome($nome);
             $this->disciplinaDao->Editar($this->disciplina);
         }
+
+        public function deletar($id){
+            $this->disciplinaDao->deletar($id);
+        }
     }

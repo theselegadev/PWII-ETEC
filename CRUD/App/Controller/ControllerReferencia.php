@@ -30,4 +30,8 @@
             $this->referencia->setNome($nome);
             $this->referenciaDao->Editar($this->referencia);
         }
+
+        public function deletar($id){
+            $this->referenciaDao->deletar($id);
+        }
     }
