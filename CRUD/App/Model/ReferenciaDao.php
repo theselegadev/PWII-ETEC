@@ -24,7 +24,13 @@
         }
         
         public function Editar(Referencia $r){
+            $sql = "UPDATE referencias SET nome = ? WHERE id = ?";
+            $res = Conexao::getConexao()->prepare($sql);
+            
+            $res->bindValue(1,$r->getNome());
+            $res->bindValue(2,$r->getId());
 
+            $res->execute();
         }
 
         public function Deletar($id){
@@ -32,6 +38,6 @@
         }
 
         public function BuscarPorId($id){
-
+            
         }
     }

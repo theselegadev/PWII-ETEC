@@ -23,7 +23,13 @@
         }
         
         public function Editar(Disciplina $d){
+            $sql = "UPDATE disciplinas SET disciplina = ? WHERE id = ?";
+            $res = Conexao::getConexao()->prepare($sql);
+            
+            $res->bindValue(1,$d->getNome());
+            $res->bindValue(2,$d->getId());
 
+            $res->execute();
         }
 
         public function Deletar($id){
