@@ -11,8 +11,8 @@
                 }catch(\PDOException $e){
                     echo "Erro de conexão: " . $e->getMessage();
                 }
-
-                return self::$conexao;
             }
+
+            return self::$conexao;
         }
     }

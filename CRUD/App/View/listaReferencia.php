@@ -16,7 +16,7 @@
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-3">
-                                <button class="btn btn-success">Nova Referência</button>
+                                <a href="./inserirReferencia.php" class="btn btn-success">Nova Referência</a>
                             </div>
                             <div class="col-6">
                                 <form action="">

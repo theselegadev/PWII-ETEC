@@ -4,7 +4,7 @@
 
     class DisciplinaDao{
         public function Inserir(Disciplina $d){
-            $sql = "INSERT INTO disciplinas VALUES (?,?)";
+            $sql = "INSERT INTO disciplinas (id,disciplina) VALUES (?,?)";
             $res = Conexao::getConexao()->prepare($sql);
 
             $res->bindValue(1,$d->getId());

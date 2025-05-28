@@ -10,7 +10,7 @@
         }
 
         public function getNome(){
-            $this->nome;
+            return $this->nome;
         }
 
         public function setId($id){

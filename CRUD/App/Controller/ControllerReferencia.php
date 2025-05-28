@@ -14,4 +14,10 @@
         public function getReferencias(){
             return $this->referenciaDao->Ler();
         }
+
+        public function Inserir($id,$nome){
+            $this->referencia->setId($id);
+            $this->referencia->setNome($nome);
+            $this->referenciaDao->Inserir($this->referencia);
+        }
     }
