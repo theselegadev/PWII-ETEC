@@ -10,11 +10,13 @@
 <body style="overflow-x: hidden;">
     <?php 
         include("./assets/nav.php");
-
         if(isset($_GET['alerta'])){
-            ?>
-                
-            <?php
+            echo "<div class='container'>";
+                echo "<div class='alert alert-success alert-dismissible fade show mt-2' role='alert'>";
+                    echo $_GET['alerta'];
+                    echo "<a href='./listaReferencia.php'><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></a>";
+                echo "</div>";
+            echo "</div>";
         }
     ?>
     <div class="container">
@@ -66,8 +68,8 @@
                                         echo "<td>$item[ID]</td>";
                                         echo "<td>$item[NOME]</td>";
                                         echo "<td>
-                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
-                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                            <a href='./editarReferencia.php?id_referencia=$item[ID]' class='btn btn-primary'>Editar</a>
+                                            <a href='../index.php?id_referencia_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
                                         </td>";
                                     echo "</tr>";
                                 }
@@ -77,8 +79,8 @@
                                         echo "<td>$item[ID]</td>";
                                         echo "<td>$item[NOME]</td>";
                                         echo "<td>
-                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
-                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                            <a href='./editarReferencia.php?id_referencia=$item[ID]' class='btn btn-primary'>Editar</a>
+                                            <a href='../index.php?id_referencia_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
                                         </td>";
                                     echo "</tr>";
                                 }

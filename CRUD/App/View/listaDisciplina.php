@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="./assets/bootstrap.min.css">
 </head>
 <body style="overflow-x: hidden;">
-    <?php include("./assets/nav.php")?>
+    <?php 
+        include("./assets/nav.php");
+        if(isset($_GET['alerta'])){
+            echo "<div class='container'>";
+                echo "<div class='alert alert-success alert-dismissible fade show mt-2' role='alert'>";
+                    echo $_GET['alerta'];
+                    echo "<a href='./listaDisciplina.php'><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></a>";
+                echo "</div>";
+            echo "</div>";
+        }
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
