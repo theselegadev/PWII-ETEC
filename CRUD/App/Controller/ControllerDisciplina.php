@@ -36,6 +36,6 @@
         }
 
         public function pesquisar($string){
-            $this->disciplinaDao->pesquisar($string);
+            return $this->disciplinaDao->pesquisar($string);
         }
     }

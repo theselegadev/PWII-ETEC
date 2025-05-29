@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="./assets/bootstrap.min.css">
 </head>
 <body style="overflow-x: hidden;">
-    <?php include("./assets/nav.php")?>
+    <?php 
+        include("./assets/nav.php");
+
+        if(isset($_GET['alerta'])){
+            ?>
+                
+            <?php
+        }
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
@@ -19,8 +27,8 @@
                                 <a href="./inserirReferencia.php" class="btn btn-success">Nova Referência</a>
                             </div>
                             <div class="col-6">
-                                <form action="">
-                                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"/>
+                                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+                                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="pesquisa" required/>
                             </div>
                             <div class="col-3">
                                     <button type="submit" class="btn btn-outline-success">Pesquisar</button>
@@ -52,15 +60,28 @@
                         <?php
                             $controllerRef = new \App\Controller\ControllerReferencia();
 
-                            foreach($controllerRef->getReferencias() as $item){
-                                echo "<tr>";
-                                    echo "<td>$item[ID]</td>";
-                                    echo "<td>$item[NOME]</td>";
-                                    echo "<td>
-                                        <a href='./editarReferencia.php?id_referencia=$item[ID]' class='btn btn-primary'>Editar</a>
-                                        <a href='../index.php?id_referencia_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
-                                    </td>";
-                                echo "</tr>";
+                            if(isset($_GET['pesquisa']) && count($controllerRef->pesquisar($_GET['pesquisa']))>0){
+                                foreach($controllerRef->pesquisar($_GET['pesquisa']) as $item){
+                                    echo "<tr>";
+                                        echo "<td>$item[ID]</td>";
+                                        echo "<td>$item[NOME]</td>";
+                                        echo "<td>
+                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
+                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                        </td>";
+                                    echo "</tr>";
+                                }
+                            }else{
+                                foreach($controllerRef->getReferencias() as $item){
+                                    echo "<tr>";
+                                        echo "<td>$item[ID]</td>";
+                                        echo "<td>$item[NOME]</td>";
+                                        echo "<td>
+                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
+                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                        </td>";
+                                    echo "</tr>";
+                                }
                             }
                         
                         ?>

@@ -50,10 +50,12 @@
         }
 
         public function pesquisar($string){
-            $sql = "SELECT * FROM referencia WHERE nome LIKE ?";
+            $string = '%'.$string.'%';
+
+            $sql = "SELECT * FROM referencias WHERE nome LIKE ?";
             $res = Conexao::getConexao()->prepare($sql);
 
-            $res->bindParam("s",$string);
+            $res->bindValue(1,$string);
             
             $res->execute();
 

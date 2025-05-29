@@ -20,7 +20,7 @@
                             </div>
                             <div class="col-6">
                                 <form action="<?php $_SERVER['PHP_SELF']?>" method="get">
-                                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"/>
+                                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="pesquisa" required/>
                             </div>
                             <div class="col-3">
                                     <button type="submit" class="btn btn-outline-success">Pesquisar</button>
@@ -52,17 +52,29 @@
                         <?php
                             $controllerDisc = new \App\Controller\ControllerDisciplina();
 
-                            foreach($controllerDisc->getDisciplinas() as $item){
-                                echo "<tr>";
-                                    echo "<td>$item[ID]</td>";
-                                    echo "<td>$item[DISCIPLINA]</td>";
-                                    echo "<td>
-                                        <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
-                                        <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
-                                    </td>";
-                                echo "</tr>";
+                            if(isset($_GET['pesquisa']) && count($controllerDisc->pesquisar($_GET['pesquisa']))>0){
+                                foreach($controllerDisc->pesquisar($_GET['pesquisa']) as $item){
+                                    echo "<tr>";
+                                        echo "<td>$item[ID]</td>";
+                                        echo "<td>$item[DISCIPLINA]</td>";
+                                        echo "<td>
+                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
+                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                        </td>";
+                                    echo "</tr>";
+                                }
+                            }else{
+                                foreach($controllerDisc->getDisciplinas() as $item){
+                                    echo "<tr>";
+                                        echo "<td>$item[ID]</td>";
+                                        echo "<td>$item[DISCIPLINA]</td>";
+                                        echo "<td>
+                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
+                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                        </td>";
+                                    echo "</tr>";
+                                }
                             }
-                        
                         ?>
                     </tbody>
                 </table>
