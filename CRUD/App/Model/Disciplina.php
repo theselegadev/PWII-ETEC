@@ -5,7 +5,7 @@
         private $id;
         private $nome;
 
-        public function getId(){
+        public function  getId(){
             return $this->id;
         }
 

@@ -27,6 +27,8 @@
               <li><a class="dropdown-item" href="index.php">Home</a></li>
               <li><a class="dropdown-item" href="login.php">Login</a></li>
               <li><a class="dropdown-item" href="usuarios.php">Usuarios</a></li>
+              <li><a class="dropdown-item" href="./listaDisciplina.php">Disciplinas</a></li>
+              <li><a class="dropdown-item" href="./listaReferencia.php">Referencias</a></li>
             </ul>
           </li>
         </ul>
