@@ -10,6 +10,15 @@
 <body style="overflow-x: hidden;">
     <?php 
         include("./assets/nav.php");
+
+        $controllerRef = new \App\Controller\ControllerReferencia();
+
+        if(isset($_GET['pesquisa'])){
+            $resultado = $controllerRef->pesquisar($_GET['pesquisa']);
+        }else{
+            $resultado = $controllerRef->getReferencias();
+        }
+
         if(isset($_GET['alerta'])){
             echo "<div class='container'>";
                 echo "<div class='alert alert-success alert-dismissible fade show mt-2' role='alert'>";
@@ -60,31 +69,18 @@
                     </thead>
                     <tbody>
                         <?php
-                            $controllerRef = new \App\Controller\ControllerReferencia();
-
-                            if(isset($_GET['pesquisa']) && count($controllerRef->pesquisar($_GET['pesquisa']))>0){
-                                foreach($controllerRef->pesquisar($_GET['pesquisa']) as $item){
-                                    echo "<tr>";
-                                        echo "<td>$item[ID]</td>";
-                                        echo "<td>$item[NOME]</td>";
-                                        echo "<td>
-                                            <a href='./editarReferencia.php?id_referencia=$item[ID]' class='btn btn-primary'>Editar</a>
-                                            <a href='../index.php?id_referencia_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
-                                        </td>";
-                                    echo "</tr>";
-                                }
-                            }else{
-                                foreach($controllerRef->getReferencias() as $item){
-                                    echo "<tr>";
-                                        echo "<td>$item[ID]</td>";
-                                        echo "<td>$item[NOME]</td>";
-                                        echo "<td>
-                                            <a href='./editarReferencia.php?id_referencia=$item[ID]' class='btn btn-primary'>Editar</a>
-                                            <a href='../index.php?id_referencia_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
-                                        </td>";
-                                    echo "</tr>";
-                                }
+                            foreach($resultado as $item){
+                                echo "<tr>";
+                                    echo "<td>$item[ID]</td>";
+                                    echo "<td>$item[NOME]</td>";
+                                    echo "<td>
+                                        <a href='./editarReferencia.php?id_referencia=$item[ID]' class='btn btn-primary'>Editar</a>
+                                        <a href='../index.php?id_referencia_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                    </td>";
+                                echo "</tr>";
                             }
+
+                            
                         
                         ?>
                     </tbody>

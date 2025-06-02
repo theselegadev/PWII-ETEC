@@ -10,6 +10,15 @@
 <body style="overflow-x: hidden;">
     <?php 
         include("./assets/nav.php");
+
+        $controllerDisc = new \App\Controller\ControllerDisciplina();
+                            
+        if(isset($_GET['pesquisa'])){
+            $resultado = $controllerDisc->pesquisar($_GET['pesquisa']);
+        }else{
+            $resultado = $controllerDisc->getDisciplinas();
+        }
+
         if(isset($_GET['alerta'])){
             echo "<div class='container'>";
                 echo "<div class='alert alert-success alert-dismissible fade show mt-2' role='alert'>";
@@ -60,30 +69,15 @@
                     </thead>
                     <tbody>
                         <?php
-                            $controllerDisc = new \App\Controller\ControllerDisciplina();
-
-                            if(isset($_GET['pesquisa']) && count($controllerDisc->pesquisar($_GET['pesquisa']))>0){
-                                foreach($controllerDisc->pesquisar($_GET['pesquisa']) as $item){
-                                    echo "<tr>";
-                                        echo "<td>$item[ID]</td>";
-                                        echo "<td>$item[DISCIPLINA]</td>";
-                                        echo "<td>
-                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
-                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
-                                        </td>";
-                                    echo "</tr>";
-                                }
-                            }else{
-                                foreach($controllerDisc->getDisciplinas() as $item){
-                                    echo "<tr>";
-                                        echo "<td>$item[ID]</td>";
-                                        echo "<td>$item[DISCIPLINA]</td>";
-                                        echo "<td>
-                                            <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
-                                            <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
-                                        </td>";
-                                    echo "</tr>";
-                                }
+                            foreach($resultado as $item){
+                                echo "<tr>";
+                                    echo "<td>$item[ID]</td>";
+                                    echo "<td>$item[DISCIPLINA]</td>";
+                                    echo "<td>
+                                        <a href='./editarDisciplina.php?id_disciplina=$item[ID]' class='btn btn-primary'>Editar</a>
+                                        <a href='../index.php?id_disciplina_delete=$item[ID]' class='btn btn-danger'>Deletar</a>
+                                    </td>";
+                                echo "</tr>";
                             }
                         ?>
                     </tbody>
