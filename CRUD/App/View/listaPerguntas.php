@@ -18,7 +18,7 @@
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-3">
-                                <a href="./inserirPergunta.php" class="btn btn-success">Nova Pergunta</a>
+                                <a href="./inserirPerguntas.php" class="btn btn-success">Nova Pergunta</a>
                             </div>
                             <div class="col-6">
                                 <form action="<?php $_SERVER['PHP_SELF']?>" method="get">
