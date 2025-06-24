@@ -12,10 +12,13 @@
     <?php 
         include("./assets/nav.php");
         $controllerPer = new \App\Controller\ControllerPergunta();
+        $controllerAlt = new \App\Controller\ControllerAlternativa();
 
+        
 
         if(isset($_GET['id']) && !empty($_GET['id'])){
             $pergunta = $controllerPer->lerPorId($_GET['id']);
+            $alternativas = $controllerAlt->ler($_GET['id']);
         }
     ?>
     
@@ -61,17 +64,27 @@
                     <div class="card-body">
                         <table class="table table-striped">
                             <thead>
+                                <th>Id</th>
                                 <th>Alternativa</th>
-                                <th>Correta</th>
+                                <th>Resposta</th>
                                 <th></th>
                             </thead>
                             <tbody>
-                                <td>Exemplo</td>
-                                <td>Exemplo</td>
-                                <td>
-                                    <button class="btn btn-primary">Editar</button>
-                                    <button class="btn btn-danger">Deletar</button>
-                                </td>
+
+                                <?php
+                                    foreach($alternativas as $item){
+                                        $correta = $item['CORRETA']>0 ? "Correta" : "Incorreta";
+                                        echo "<tr>";
+                                            echo "<td>$item[ID]</td>";
+                                            echo "<td>$item[ALTERNATIVA]</td>";
+                                            echo "<td>$correta</td>";
+                                            echo "<td>
+                                                <button class='btn btn-primary'>Editar</button>
+                                                <button class='btn btn-danger'>Deletar</button>
+                                            </td>";
+                                        echo "</tr>";
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>

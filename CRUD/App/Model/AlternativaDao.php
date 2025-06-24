@@ -6,17 +6,15 @@
             $sql = "INSERT INTO alternativas (alternativa, id_pergunta, correta) VALUES(?,?,?)";
             $res = Conexao::getConexao()->prepare($sql);
 
-            $correta = !empty($a->getCorreta()) ? 1 : 0;
-
             $res->bindValue(1,$a->getConteudo());
             $res->bindValue(2,$a->getIdPergunta());
-            $res->bindValue(3,$correta);
+            $res->bindValue(3,$a->getCorreta());
 
             $res->execute();
         }
 
-        public function Ler(){
-            $sql = "SELECT * FROM alternativas";
+        public function Ler($id){
+            $sql = "SELECT * FROM alternativas WHERE id_pergunta = $id";
 
             $res = Conexao::getConexao()->query($sql);
 

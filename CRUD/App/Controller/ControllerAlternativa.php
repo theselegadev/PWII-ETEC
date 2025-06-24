@@ -19,8 +19,8 @@
             $this->alternativaDao->Inserir($this->alternativa);
         }
 
-        public function ler(){
-            return $this->alternativaDao->Ler();
+        public function ler($id){
+            return $this->alternativaDao->Ler($id);
         }
     }
 
