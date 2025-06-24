@@ -1,6 +1,8 @@
 <?php
     namespace App\Controller;
 
+    
+
     class ControllerPergunta{
         private $perguntaDao;
         private $pergunta;
@@ -24,6 +26,6 @@
         }
 
         public function lerPorId($id){
-            return $this->lerPorId($id);
+            return $this->perguntaDao->LerPorId($id);
         }
     }

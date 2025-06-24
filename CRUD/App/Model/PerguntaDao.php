@@ -14,7 +14,7 @@
         }
 
         public function Ler(){
-            $sql = "SELECT *, d.disciplina as DISCIPLINA FROM perguntas AS p INNER JOIN disciplinas AS d on p.id_disciplina = d.id";
+            $sql = "SELECT p.id AS ID, p.pergunta as PERGUNTA, d.disciplina as DISCIPLINA FROM perguntas AS p INNER JOIN disciplinas AS d on p.id_disciplina = d.id";
 
             $res = Conexao::getConexao()->query($sql);
 
