@@ -21,4 +21,8 @@
         public function ler(){
             return $this->perguntaDao->Ler();
         }
+
+        public function lerPorId($id){
+            return $this->lerPorId($id);
+        }
     }

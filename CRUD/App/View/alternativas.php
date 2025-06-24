@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../../vendor/autoload.php'?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,7 +9,15 @@
     <link rel="stylesheet" href="./assets/bootstrap.min.css">
 </head>
 <body style="overflow-x: hidden;">
-    <?php include("./assets/nav.php");?>
+    <?php 
+        include("./assets/nav.php");
+        $controllerPer = new \App\Controller\ControllerPergunta();
+
+
+        if(isset($_GET['id']) && !empty($_GET['id'])){
+            $pergunta = $controllerPer->lerPorId($_GET['id']);
+        }
+    ?>
     
     <div class="container">
         <div class="row">
@@ -21,9 +30,9 @@
                         <form action="" method="post">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Pergunta</span>
-                                <input type="text" class="form-control" name="pergunta" readonly>
+                                <input type="text" class="form-control" name="pergunta" readonly value="<?php echo $pergunta['PERGUNTA']?>">
                             </div>
-                            <input type="hidden" name="id_pergunta">
+                            <input type="hidden" name="id_pergunta" value="<?php echo $pergunta['ID']?>">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Alternativa</span>
                                 <input type="text" class="form-control" name="alternativa" placeholder="Conteúdo">

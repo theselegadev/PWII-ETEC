@@ -21,4 +21,14 @@
 
             return $perguntas;
         }
+
+        public function LerPorId($id){
+            $sql = "SELECT * FROM perguntas WHERE id = $id";
+
+            $res = Conexao::getConexao()->query($sql);
+
+            $pergunta = $res->rowCount()>0 ? $res->fetch() : [];
+
+            return $pergunta;
+        }
     }
