@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../../vendor/autoload.php'?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,6 +11,8 @@
 <body style="overflow-x: hidden;">
     <?php 
         include("./assets/nav.php");
+        $controllerPer = new \App\Controller\ControllerPergunta();
+        $perguntas = $controllerPer->ler();
     ?>
     <div class="container">
         <div class="row">
@@ -47,13 +50,19 @@
                             <th></th>
                         </thead>
                         <tbody>
-                            <td>1</td>
-                            <td>Exemplo de pergunta</td>
-                            <td>
-                                <button class="btn btn-primary">Alternativas</button>
-                                <button class="btn btn-warning">Editar</button>
-                                <button class="btn btn-danger">Deletar</button>
-                            </td>
+                        <?php
+                            foreach($perguntas as $item){
+                                echo "<tr>";
+                                    echo "<td>$item[ID]</td>";
+                                    echo "<td>$item[PERGUNTA]</td>";
+                                    echo "<td>
+                                        <a href='./alternativas.php?id=$item[ID]' class='btn btn-primary'>Alternativas</a>
+                                        <button class='btn btn-warning'>Editar</button>
+                                        <button class='btn btn-danger'>Deletar</button>
+                                    </td>";
+                                echo "</tr>";
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

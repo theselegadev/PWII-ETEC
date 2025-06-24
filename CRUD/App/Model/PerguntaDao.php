@@ -3,7 +3,7 @@
 
     class PerguntaDao{
         public function Inserir(Pergunta $p){
-            $sql = "INSERT INTO perguntas VALUES (?)";
+            $sql = "INSERT INTO perguntas (pergunta) VALUES (?)";
 
             $res = Conexao::getConexao()->prepare($sql);
 
