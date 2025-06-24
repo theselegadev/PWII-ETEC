@@ -27,7 +27,7 @@
                         <h2>Cadastrar Alternativas</h2>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="../index.php" method="post">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Pergunta</span>
                                 <input type="text" class="form-control" name="pergunta" readonly value="<?php echo $pergunta['PERGUNTA']?>">
@@ -38,7 +38,7 @@
                                 <input type="text" class="form-control" name="alternativa" placeholder="Conteúdo">
                             </div>
                             <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" value="1" id="checkDefault">
+                                <input class="form-check-input" type="checkbox" value="1" name="correta" id="checkDefault">
                                 <label class="form-check-label" for="checkDefault">
                                     Correta
                                 </label>

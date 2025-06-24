@@ -3,7 +3,7 @@
     
     $controllerDisc = new \App\Controller\ControllerDisciplina();
     $controllerRef = new \App\Controller\ControllerReferencia();
-    $controllerPer = new \App\Controller\ControllerPergunta();
+    $controllerPer = new \App\Controller\ControllerPergunta(); 
 
     if(isset($_POST['id_disciplina']) && !empty($_POST['id_disciplina'])){
         $controllerDisc->inserir($_POST['id_disciplina'],$_POST['nome_disciplina']);
@@ -39,4 +39,7 @@
         $controllerPer->inserir($_POST['pergunta_inserir'],$_POST['disciplina']);
         header("Location: ./View/listaPerguntas.php?alerta=Inserido com sucesso");
         exit;
+    }
+    if(isset($_POST['alternativa']) && !empty($_POST['alternativa'])){
+        
     }
