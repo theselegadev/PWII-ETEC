@@ -3,17 +3,18 @@
 
     class PerguntaDao{
         public function Inserir(Pergunta $p){
-            $sql = "INSERT INTO perguntas (pergunta) VALUES (?)";
+            $sql = "INSERT INTO perguntas (pergunta,id_disciplina) VALUES (?,?)";
 
             $res = Conexao::getConexao()->prepare($sql);
 
             $res->bindValue(1,$p->getPergunta());
+            $res->bindValue(2,$p->getIdDisciplina());
 
             $res->execute();
         }
 
         public function Ler(){
-            $sql = "SELECT * FROM perguntas";
+            $sql = "SELECT *, d.disciplina as DISCIPLINA FROM perguntas AS p INNER JOIN disciplinas AS d on p.id_disciplina = d.id";
 
             $res = Conexao::getConexao()->query($sql);
 

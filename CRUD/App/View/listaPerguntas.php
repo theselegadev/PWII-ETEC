@@ -37,35 +37,35 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="card mt-5">
-                <div class="card-header">
-                    <h2>Lista de Perguntas</h2>
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped">
-                        <thead>
-                            <th>ID</th>
-                            <th>Pergunta</th>
-                            <th></th>
-                        </thead>
-                        <tbody>
-                        <?php
-                            foreach($perguntas as $item){
-                                echo "<tr>";
-                                    echo "<td>$item[ID]</td>";
-                                    echo "<td>$item[PERGUNTA]</td>";
-                                    echo "<td>
-                                        <a href='./alternativas.php?id=$item[ID]' class='btn btn-primary'>Alternativas</a>
-                                        <button class='btn btn-warning'>Editar</button>
-                                        <button class='btn btn-danger'>Deletar</button>
-                                    </td>";
-                                echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Lista de Perguntas</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Pergunta</th>
+                        <th>Disciplina</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                    <?php
+                        foreach($perguntas as $item){
+                            echo "<tr>";
+                                echo "<td>$item[ID]</td>";
+                                echo "<td>$item[PERGUNTA]</td>";
+                                echo "<td>$item[DISCIPLINA]</td>";
+                                echo "<td>
+                                    <a href='./alternativas.php?id=$item[ID]' class='btn btn-primary'>Alternativas</a>
+                                    <button class='btn btn-warning'>Editar</button>
+                                    <button class='btn btn-danger'>Deletar</button>
+                                </td>";
+                            echo "</tr>";
+                        }
+                    ?>
+                    </tbody>
+                </table>
             </div>
         </div>
 

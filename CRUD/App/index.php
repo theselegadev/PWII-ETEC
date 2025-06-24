@@ -36,6 +36,7 @@
         exit;
     }
     if(isset($_POST['pergunta_inserir'])){
-        $controllerPer->inserir($_POST['pergunta_inserir']);
+        $controllerPer->inserir($_POST['pergunta_inserir'],$_POST['disciplina']);
         header("Location: ./View/listaPerguntas.php?alerta=Inserido com sucesso");
+        exit;
     }
