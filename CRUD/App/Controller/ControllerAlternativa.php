@@ -1,8 +1,6 @@
 <?php
     namespace App\Controller;
 
-use App\Model\Conexao;
-
     class ControllerAlternativa{
         private $alternativaDao;
         private $alternativa;
@@ -22,12 +20,7 @@ use App\Model\Conexao;
         }
 
         public function ler(){
-            $sql = "SELECT * FROM alternativas";
-            $res = Conexao::getConexao()->query($sql);
-
-            $alternativas = $res->rowCount()>0 ? $res->fetchAll(\PDO::FETCH_ASSOC) :[];
-
-            return $alternativas;
+            return $this->alternativaDao->Ler();
         }
     }
 

@@ -4,6 +4,7 @@
     $controllerDisc = new \App\Controller\ControllerDisciplina();
     $controllerRef = new \App\Controller\ControllerReferencia();
     $controllerPer = new \App\Controller\ControllerPergunta(); 
+    $controllerAlt = new \App\Controller\ControllerAlternativa();
 
     if(isset($_POST['id_disciplina']) && !empty($_POST['id_disciplina'])){
         $controllerDisc->inserir($_POST['id_disciplina'],$_POST['nome_disciplina']);
@@ -41,5 +42,7 @@
         exit;
     }
     if(isset($_POST['alternativa']) && !empty($_POST['alternativa'])){
-        
+        $controllerAlt->inserir($_POST['alternativa'],$_POST['id_pergunta'],$_POST['correta']);
+        header("Location: ./View/alternativas.php?alerta=" . urlencode('Inserido com sucesso') . "&id=" . $_POST['id_pergunta']);
+        exit;
     }
