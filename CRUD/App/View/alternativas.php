@@ -55,9 +55,24 @@
             </div>
         </div>
 
+        <?php
+            if(isset($_GET['alerta'])){
+                echo "<div class='container mt-3'>";
+                    echo "<div class='row'>";
+                        echo "<div class='col-6 offset-3'>";
+                            echo "<div class='alert alert-success alert-dismissible fade show mt-2' role='alert'>";
+                                echo $_GET['alerta'];
+                                echo "<a href='./alternativas.php?id=".$_GET['id']."'><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></a>";
+                            echo "</div>";
+                        echo "</div>";
+                    echo "</div>";
+                echo "</div>";
+            }
+        ?>
+
         <div class="row">
             <div class="col-10 offset-1">
-                <div class="card mt-5">
+                <div class="card mt-2">
                     <div class="card-header">
                         <h2>Lista de Alternativas</h2>
                     </div>

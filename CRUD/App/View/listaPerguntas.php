@@ -13,6 +13,15 @@
         include("./assets/nav.php");
         $controllerPer = new \App\Controller\ControllerPergunta();
         $perguntas = $controllerPer->ler();
+
+        if(isset($_GET['alerta'])){
+            echo "<div class='container'>";
+                echo "<div class='alert alert-success alert-dismissible fade show mt-2' role='alert'>";
+                    echo $_GET['alerta'];
+                    echo "<a href='./listaPerguntas.php'><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></a>";
+                echo "</div>";
+            echo "</div>";
+        }
     ?>
     <div class="container">
         <div class="row">
