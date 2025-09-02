@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cardápio de Pizzas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5" id="app">
+    <h1 class="mb-4 text-center">Cardápio de Pizzas</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <!-- Pizza 1 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Margherita</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">35,00</span></p>
+            <label for="pizza1-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza1-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[0].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 2 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Calabresa</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">38,00</span></p>
+            <label for="pizza2-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza2-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[1].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 3 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Quatro Queijos</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">42,00</span></p>
+            <label for="pizza3-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza3-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[2].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 4 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Portuguesa</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">40,00</span></p>
+            <label for="pizza4-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza4-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[3].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 5 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Pepperoni</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">45,00</span></p>
+            <label for="pizza5-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza5-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[4].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 6 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Frango com Catupiry</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">43,00</span></p>
+            <label for="pizza6-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza6-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[5].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 7 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Napolitana</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">39,00</span></p>
+            <label for="pizza7-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza7-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[6].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 8 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Bacon</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">46,00</span></p>
+            <label for="pizza8-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza8-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[7].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 9 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Vegetariana</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">37,00</span></p>
+            <label for="pizza9-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza9-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[8].quantidade">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza 10 -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Pizza Doce (Chocolate)</h5>
+            <p class="card-text">Preço: R$ <span class="pizza-preco">41,00</span></p>
+            <label for="pizza10-qtd" class="form-label">Quantidade:</label>
+            <input type="number" id="pizza10-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[9].quantidade">
+          </div>
+        </div>
+      </div>
+
+		<!-- Pizza 11 -->
+		<div class="col">
+		  <div class="card h-100">
+			<div class="card-body">
+			  <h5 class="card-title">Pizza Mexicana</h5>
+			  <p class="card-text">Preço: R$ <span class="pizza-preco">44,00</span></p>
+			  <label for="pizza11-qtd" class="form-label">Quantidade:</label>
+			  <input type="number" id="pizza11-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[10].quantidade">
+			</div>
+		  </div>
+		</div>
+
+
+		<!-- Pizza 12 -->
+		<div class="col">
+		  <div class="card h-100">
+			<div class="card-body">
+			  <h5 class="card-title">Pizza Caprese</h5>
+			  <p class="card-text">Preço: R$ <span class="pizza-preco">42,00</span></p>
+			  <label for="pizza12-qtd" class="form-label">Quantidade:</label>
+			  <input type="number" id="pizza12-qtd" class="form-control" min="0" placeholder="0" v-model="pizzas[11].quantidade">
+			</div>
+		  </div>
+		</div>
+
+
+    </div>
+
+    <!-- Resumo do Pedido -->
+    <div class="mt-5 p-4 bg-white rounded shadow-sm">
+      <h4>Resumo do Pedido</h4>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="total-pizzas" class="form-label">Quantidade total de pizzas:</label>
+          <input type="text" id="total-pizzas" class="form-control" readonly placeholder="0" :value="handleQuantidade">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="valor-total" class="form-label">Valor total da compra (R$):</label>
+          <input type="text" id="valor-total" class="form-control" readonly placeholder="R$ 0,00" :value="handlePrecoTotal">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          pizzas: [
+            {nome:"margherita", preco: 35, quantidade: 0},
+            {nome:"calabresa", preco: 35, quantidade: 0},
+            {nome:"quatro queijos", preco: 35, quantidade: 0},
+            {nome:"portuguesa", preco: 35, quantidade: 0},
+            {nome:"pepperoni", preco: 35, quantidade: 0},
+            {nome:"frango com catupiry", preco: 35, quantidade: 0},
+            {nome:"napolitana", preco: 35, quantidade: 0},
+            {nome:"bacon", preco: 35, quantidade: 0},
+            {nome:"Vegetariana", preco: 35, quantidade: 0},
+            {nome:"doce", preco: 35, quantidade: 0},
+            {nome:"mexicana", preco: 35, quantidade: 0},
+            {nome:"caprese", preco: 35, quantidade: 0}
+          ]
+        }
+      },
+      computed: {
+        handleQuantidade(){
+          return this.pizzas.reduce((total,pizza)=>total + pizza.quantidade,0)
+        },
+        handlePrecoTotal(){
+          return this.pizzas.reduce((total,pizza)=>total + (pizza.quantidade * pizza.preco),0)
+        }
+      }
+    })
+  
+    app.mount('#app')
+
+</script>
+</body>
+</html>

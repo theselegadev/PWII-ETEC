@@ -1,40 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IMC</title>
-  <style>
-    #app {
-      border: 2px solid gray;
-      padding: 10px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      align-items: center;
-      flex-direction: column;
-      width: 500px;
-      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.192);
-    }
-  </style>
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 
-<h1>IMC (Faça o seu IMC e descubra se você é um gordo safado ou um magrelo rabujento)</h1>
-
 <div id="app">
-    <label>Informe o seu peso:</label>
-    <input type="number" step="0.1" v-model="peso">
-    <label>Informe sua altura:</label>
-    <input type="number" step="0.1" v-model="altura">
-    <input type="checkbox" v-model="gerar">
-    <div v-show="gerar">
-        <p v-if="peso/(altura * altura) <= 18.5" style="color: red;">Você está muito magro, vá comer mais seu palitão</p>
-        <p v-else-if="peso/(altura * altura) < 25 && peso/(altura * altura) > 18.5" style="color: green;">Parabéns meu joven você está no peso ideal</p>
-        <p v-else-if="peso/(altura * altura) < 30 && peso/(altura * altura)> 25" style="color: yellow;">Você está começando a ficar gordo</p>
-        <p v-else="" style="color: red;">Cara, você está imenso</p>
-    </div>
-    <p>Sua altura é: {{altura}}</p>
-    <p>Sua pesp é: {{peso}}</p>
+  <div class="container">
+    
+  </div>    
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -43,9 +18,7 @@
   const app = Vue.createApp({
    data() {
     return {
-     peso: 0,
-     altura:0,
-     gerar: false
+      
     }
    }
   })
@@ -53,6 +26,6 @@
   app.mount('#app')
 
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
