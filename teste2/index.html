@@ -7,8 +7,27 @@
 <body>
 
 <div id="app">
-  <div class="container">
-    
+  <div class="d-flex flex-wrap gap-5 justify-content-center">
+     <div class="card shadow mt-3" v-for="personagem in personagens" :key="personagem.id" v-show="!showPersonagem">
+        <div class="card-header">
+          <h3>{{personagem.name}}</h3>
+        </div>
+        <div class="card-body d-flex flex-column">
+          <img :src="personagem.image" class="mb-2" alt="imagem do personagem" width="500px" height="500px">
+          <button class="btn btn-primary" @click="requestGetPersonagem(personagem.id)">Ver detalhes</button>
+        </div>
+     </div>
+     <div class="card mt-4 mb-4 shadow" v-show="showPersonagem" style="margin: auto; width: 600px;">
+      <div class="card-header">
+        {{personagem.name}}
+      </div>
+      <div class="card-body">
+        <img :src="personagem.image" alt="" width="500px" height="500px">
+        <h5 class="card-title">{{personagem.race}}</h5>
+        <p class="card-text">ki: {{personagem.ki}}</p>
+        <p class="card-text">{{personagem.description}}</p>
+      </div>
+     </div> 
   </div>    
 </div>
 
@@ -18,10 +37,35 @@
   const app = Vue.createApp({
    data() {
     return {
-      
+      showPersonagem: false,
+      personagens: [],
+      personagem: {}      
+    }
+   },
+   methods: {
+      async requestGetAll(){
+        const endpoint = "https://dragonball-api.com/api/characters?limit=100"
+        const response = await fetch(endpoint)
+        .catch(err=>console.log("Erro: ", err))
+        const personagens =  await response.json()
+        this.personagens = personagens.items
+        console.log(personagens)
+      },
+      async requestGetPersonagem(id){
+        const endpoint = `https://dragonball-api.com/api/characters/${id}`
+        const response = await fetch(endpoint)
+        .catch(err=>console.log("Erro: ",err))
+        const personagem = await response.json()
+        console.log(personagem)
+        this.showPersonagem = true
+        this.personagem = personagem
+      }
+    },
+    mounted(){
+      this.requestGetAll()
     }
    }
-  })
+  )
   
   app.mount('#app')
 
